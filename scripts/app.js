@@ -37,9 +37,9 @@ function updateUI() {
     listItem.classList.add(transaction.amount > 0 ? "income" : "expense");
     listItem.innerHTML = `
             ${transaction.name}
-            <span>${transaction.amount > 0 ? "+" : ""}$${
+            <span>${transaction.amount > 0 ? "+" : ""}${
       transaction.amount
-    }</span>
+    }원</span>
             <button class="delete-btn" data-id="${transaction.id}">X</button>
         `;
 
@@ -47,7 +47,7 @@ function updateUI() {
     total += transaction.amount;
   });
 
-  balanceDisplay.textContent = `${total > 0 ? "+" : ""}$${total}`;
+  balanceDisplay.textContent = `${total > 0 ? "+" : ""}${total}원`;
 
   document.querySelectorAll(".delete-btn").forEach((button) => {
     button.addEventListener("click", () =>
